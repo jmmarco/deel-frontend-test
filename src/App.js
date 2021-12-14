@@ -1,10 +1,17 @@
 import "./App.css";
 import React from "react";
+import sampleSuggestions from "./utils/sampleSuggestions.json"
 
 class App extends React.Component {
   state = {
     inputText: "",
   };
+
+  componentDidMount() {
+    this.setState({
+      sampleSuggestions,
+    });
+  }
 
   handleChange = (e) => {
     const { name, value } = e.target;
