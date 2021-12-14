@@ -2,6 +2,17 @@
   text-align: center;
 }
 
+.ui-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  width: 24rem;
+  height: 8rem;
+}
+
 .textarea {
   height: 4rem;
   border: 2px solid #e2e8f0;
@@ -15,4 +26,21 @@
 
 .textarea:focus {
   outline: 0.15rem solid #e0f2fe;
+}
+
+.ui-suggestion-container {
+  align-self: flex-start;
+  height: 3rem;
+}
+
+.suggestion {
+  border: 0;
+  background-color: lightskyblue;
+  border-radius: 1rem;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  font-size: 0.75rem;
+  letter-spacing: 0.025rem;
+  cursor: pointer;
+  margin-right: 0.5rem; 
 }
