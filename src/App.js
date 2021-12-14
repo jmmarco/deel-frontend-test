@@ -93,9 +93,8 @@ class App extends React.Component {
   render() {
     const { activeSuggestion, inputText, suggestionsList } = this.state;
     return (
-      <div className="App">
-        <h1>Autocomplete app</h1>
-        <div>{JSON.stringify(this.state)}</div>
+      <div className="app">
+        <h1 className="title">Autocomplete app</h1>
         <div className="ui-container">
           <textarea
             className="textarea"

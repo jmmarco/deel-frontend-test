@@ -1,6 +1,14 @@
-.App {
+.app {
+  margin: 2rem;
   text-align: center;
+  min-height: 90vh;
 }
+
+.title {
+  font-weight: 300;
+  letter-spacing: 0.15rem;
+}
+
 
 .ui-container {
   display: flex;
