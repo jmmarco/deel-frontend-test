@@ -42,5 +42,28 @@
   font-size: 0.75rem;
   letter-spacing: 0.025rem;
   cursor: pointer;
-  margin-right: 0.5rem; 
+  margin-right: 0.5rem;
+}
+
+.suggestions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+.suggestions-title {
+  margin: 0;
+  letter-spacing: 0.075rem;
+}
+
+.suggestions-list {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding-left: 0;
+  font-size: 1.2rem;
+}
+
+.suggestions-list li {
+  margin-right: 0.5rem;
 }

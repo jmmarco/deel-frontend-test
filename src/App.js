@@ -111,6 +111,19 @@ class App extends React.Component {
               : null}
           </div>
         </div>
+
+        <div className="suggestions-container">
+          <h2 className="suggestions-title">Available suggestions</h2>
+          {sampleSuggestions ? (
+            <ul className="suggestions-list">
+              {sampleSuggestions.map((suggestion) => (
+                <li>{suggestion}</li>
+              ))}
+            </ul>
+          ) : (
+            <p>Loading suggestions..</p>
+          )}
+        </div>
       </div>
     );
   }
