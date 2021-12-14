@@ -18,6 +18,7 @@ Not sure about this, but generally speaking a component is to re-render every ti
   Honestly (at least right now) I can't think of an example were it might break an app.
 
 6. Give 3 examples of the HOC pattern.
+
   1. A tooltip HOC
   2. React Router uses it withRouter(YourComponent)
 
