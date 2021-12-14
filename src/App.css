@@ -9,7 +9,6 @@
   letter-spacing: 0.15rem;
 }
 
-
 .ui-container {
   display: flex;
   flex-direction: column;
@@ -74,4 +73,21 @@
 
 .suggestions-list li {
   margin-right: 0.5rem;
+}
+
+.suggestions-refresh-btn {
+  margin: 0 auto;
+  border-radius: 0.25rem;
+  padding: 0.75rem 2rem;
+  background-color: lightskyblue;
+  color: #fff;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 0;
+}
+
+.suggestions-credit {
+  font-size: 0.75rem;
+  letter-spacing: 0.02rem;
 }
