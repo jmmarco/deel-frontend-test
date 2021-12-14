@@ -11,12 +11,12 @@ Project was bootrstraped with [`create-react-app`](https://create-react-app.dev/
 - Clone this repo:
 ```
 git clone https://github.com/jmmarco/deel-auto-complete.git
+```
 
 There are currently two branches available:
 - `master` -> A class component that uses a static JSON file for suggestions
 - `class-component-read-api` -> A class component that uses dynamic suggestions using an external read API
 
-```
 - Install all dependencies from within the project directory using `yarn install` or `npm install`
 - Run the application using `yarn start` or `npm start`
 
