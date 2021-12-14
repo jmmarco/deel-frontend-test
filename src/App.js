@@ -75,7 +75,7 @@ class App extends React.Component {
   };
 
   setSuggestion = (suggestion) => {
-    // Because setState is async, we need to pass a suggestion
+    // Because setState is async, we pass a callback to update the suggestion
     this.setState(
       {
         suggestion,
