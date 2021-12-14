@@ -51,6 +51,12 @@ class App extends React.Component {
     }
   };
 
+  handleKeyDown = (e) => {
+    if (e.code === "Enter") {
+      e.preventDefault();
+    }
+  };
+
   handleSuggestion = () => {
     const { inputText, suggestion, activeSuggestion } = this.state;
 
@@ -95,6 +101,7 @@ class App extends React.Component {
             className="textarea"
             name="inputText"
             onChange={this.handleChange}
+            onKeyDown={this.handleKeyDown}
             value={inputText}
           ></textarea>
 
@@ -117,7 +124,7 @@ class App extends React.Component {
           {sampleSuggestions ? (
             <ul className="suggestions-list">
               {sampleSuggestions.map((suggestion) => (
-                <li>{suggestion}</li>
+                <li key={suggestion}>{suggestion}</li>
               ))}
             </ul>
           ) : (
