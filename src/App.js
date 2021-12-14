@@ -24,14 +24,17 @@ class App extends React.Component {
       [name]: value,
     });
 
+    // grab the last word
     const [lastWord] = e.target.value.split(" ").slice(-1);
 
+    // query the autocomplete API
     if (lastWord.length > 0) {
       const autoCompleteResult = await autocomplete(
         lastWord,
         sampleSuggestions
       );
 
+      // if there is match, set the suggestion, otherwise clear it
       autoCompleteResult
         ? this.setState({
             suggestionsList: autoCompleteResult,
@@ -99,6 +102,7 @@ class App extends React.Component {
             {activeSuggestion
               ? suggestionsList.map((suggestion) => (
                   <span
+                    key={suggestion}
                     className="suggestion"
                     onClick={() => this.setSuggestion(suggestion)}
                   >
