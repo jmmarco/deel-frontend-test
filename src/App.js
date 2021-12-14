@@ -12,6 +12,7 @@ class App extends React.Component {
     suggestionsList: [],
   };
 
+  // set the initial sample suggestions when the component loads
   componentDidMount() {
     this.setState({
       sampleSuggestions,
