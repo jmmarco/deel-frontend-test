@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Autcomplete app
+This is a simple autocomplete app that autocompletes the last word that a user types inside a textarea element.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The app consists of a single component, `App.js`, there's also additional `api.js` file that contains the async "autocomplete" function.
 
-## Available Scripts
+As per the [instructions](INSTRUCTIONS.md) only JavaScript was used to write this app. 
 
-In the project directory, you can run:
+## Quick start
+Project was bootrstraped with [`create-react-app`](https://create-react-app.dev/)
 
-### `yarn start`
+- Clone this repo:
+```
+git clone https://github.com/jmmarco/deel-auto-complete.git
+```
+- Install all dependencies from within the project directory using `yarn install` or `npm install`
+- Run the application using `yarn start` or `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Functionality and limitations
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To use the app, start typing text in the visible textarea element, the app will lookup possible matches once two or more characters are entered, if a match is available, you'll see it appear below the textarea in a light blue color, click on the suggested word to accept it.
 
-### `yarn test`
+To make it easy to test a list of available suggested words is provided as well.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In order to keep things simple, the app only autocompletes the last item that was typed into the `<textarea>` element. Additional functionality to edit the user input was explored using the `keyUp` and `keyDown` event listeners, but will take more time than the alloted 120 minutes to implement a proper working prototype. Happy to discuss the details if required.
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
