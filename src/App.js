@@ -52,6 +52,7 @@ class App extends React.Component {
   handleKeyDown = (e) => {
     if (e.code === "Enter") {
       e.preventDefault();
+      return;
     }
   };
 
