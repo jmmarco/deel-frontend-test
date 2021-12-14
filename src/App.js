@@ -85,7 +85,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { activeSuggestion, suggestionsList } = this.state;
+    const { activeSuggestion, inputText, suggestionsList } = this.state;
     return (
       <div className="App">
         <h1>Autocomplete app</h1>
@@ -95,7 +95,7 @@ class App extends React.Component {
             className="textarea"
             name="inputText"
             onChange={this.handleChange}
-            value={this.state.inputText}
+            value={inputText}
           ></textarea>
 
           <div className="ui-suggestion-container">
