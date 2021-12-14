@@ -32,8 +32,6 @@ class App extends React.Component {
         sampleSuggestions
       );
 
-      console.log("autocomplete", autoCompleteResult);
-
       autoCompleteResult
         ? this.setState({
             suggestionsList: autoCompleteResult,
