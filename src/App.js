@@ -49,13 +49,6 @@ class App extends React.Component {
     }
   };
 
-  handleKeyDown = (e) => {
-    if (e.code === "Enter") {
-      e.preventDefault();
-      return;
-    }
-  };
-
   handleSuggestion = () => {
     const { inputText, suggestion, activeSuggestion } = this.state;
 
@@ -99,7 +92,6 @@ class App extends React.Component {
             className="textarea"
             name="inputText"
             onChange={this.handleChange}
-            onKeyDown={this.handleKeyDown}
             value={inputText}
           ></textarea>
 
