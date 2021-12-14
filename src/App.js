@@ -1,26 +1,25 @@
 import "./App.css";
 import React from "react";
-import sampleSuggestions from "./utils/sampleSuggestions.json";
-import autocomplete from "./utils/api";
+import autocomplete, { fetchRealRandomWordsApi } from "./utils/api";
 
 class App extends React.Component {
   state = {
     activeSuggestion: false,
     inputText: "",
     sampleSuggestions: [],
-    suggestions: "",
     suggestionsList: [],
   };
 
   // set the initial sample suggestions when the component loads
-  componentDidMount() {
+  async componentDidMount() {
     this.setState({
-      sampleSuggestions,
+      sampleSuggestions: await fetchRealRandomWordsApi(),
     });
   }
 
   handleChange = async (e) => {
     const { name, value } = e.target;
+    const { sampleSuggestions } = this.state;
     this.setState({
       [name]: value,
     });
@@ -87,7 +86,8 @@ class App extends React.Component {
   };
 
   render() {
-    const { activeSuggestion, inputText, suggestionsList } = this.state;
+    const { activeSuggestion, inputText, sampleSuggestions, suggestionsList } =
+      this.state;
     return (
       <div className="app">
         <h1 className="title">Autocomplete app</h1>
@@ -125,6 +125,30 @@ class App extends React.Component {
           ) : (
             <p>Loading suggestions..</p>
           )}
+          <button
+            onClick={async () => {
+              this.setState({
+                sampleSuggestions: await fetchRealRandomWordsApi(),
+              });
+            }}
+            className="suggestions-refresh-btn"
+          >
+            get new suggestions
+          </button>
+
+          <p className="suggestions-credit">
+            *suggestions API courtesy of{" "}
+            <cite>
+              <a
+                href="https://github.com/RazorSh4rk"
+                rel="noreferrer"
+                target="_blank"
+              >
+                github.com/RazorSh4rk
+              </a>
+            </cite>
+            .
+          </p>
         </div>
       </div>
     );
