@@ -1,7 +1,8 @@
 import "./App.css";
 import React from "react";
 import sampleSuggestions from "./utils/sampleSuggestions.json";
-import autocomplete from "./utils/api";
+import * as SearchAPI from "./utils/SearchAPI";
+// import debounce from "lodash.debounce";
 
 class App extends React.Component {
   state = {
