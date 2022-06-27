@@ -20,7 +20,7 @@ class App extends React.Component {
     });
   }
 
-  handleChange = async (e) => {
+  handleChange = (e) => {
     const { name, value } = e.target;
     this.setState({
       [name]: value,
@@ -29,29 +29,36 @@ class App extends React.Component {
     // grab the last word
     const [lastWord] = e.target.value.split(" ").slice(-1);
 
-    // query the autocomplete API
-    if (lastWord.length > 0) {
-      const autoCompleteResult = await autocomplete(
-        lastWord,
-        sampleSuggestions
-      );
+    /* 
+      query the autocomplete API with a delay (debounce) to
+      prevent race conditions
+    */
+    const timeoutId = setTimeout(async () => {
+      if (lastWord.length > 0) {
+        const autoCompleteResult = await SearchAPI.autocomplete(
+          lastWord,
+          sampleSuggestions
+        );
 
-      // if there is match, set the suggestion, otherwise clear it
-      autoCompleteResult
-        ? this.setState({
-            suggestionsList: autoCompleteResult,
-            activeSuggestion: true,
-            lastWord,
-          })
-        : this.setState((state) => {
-            return {
-              suggestion: "",
-              suggestionsList: [],
-              activeSuggestion: false,
-              lastWord: "",
-            };
-          });
-    }
+        // if there is match, set the suggestion, otherwise clear it
+        autoCompleteResult
+          ? this.setState({
+              suggestionsList: autoCompleteResult,
+              activeSuggestion: true,
+              lastWord,
+            })
+          : this.setState((state) => {
+              return {
+                suggestion: "",
+                suggestionsList: [],
+                activeSuggestion: false,
+                lastWord: "",
+              };
+            });
+      }
+    }, 2000);
+
+    return () => clearTimeout(timeoutId);
   };
 
   handleSuggestion = () => {
